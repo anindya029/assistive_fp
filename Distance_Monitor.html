@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--head itu isinya fungsi-fungsi backstage-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Biar responsif sama perubahan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Home</title>
+
+    <!--ngelink ke css/desainnya web home-->
+    <link rel="stylesheet" href="css/Distance_Monitor.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+  </head>
+
+  <!--body itu isi yang ditampilin-->
+    <body>
+        <!-- Navbar -->
+        <header class="header_section">     
+
+            <div class="top-wrapper" id="navbar">
+                <div class="id_logo">
+                    <img class="logo" src="images/logo-its.png" alt="Logo ITS">
+                    <img class="logo" src="images/logo-bme-its.png" alt="Logo BME ITS">
+                </div>   
+
+            <ul class="navbar">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="Distance_Monitor.html">DISTANCE MONITOR</a></li>
+            </ul>
+        </header>
+        <!-- Navbar -->
+            </div>
+        </div>
+
+        <h2>HC-SR04 Distance Monitor</h2>
+        <p>Last Distance from Dweet.io: <span id="distance">Loading...</span> cm</p>
+        <div id="chart-distance"></div>
+      
+        <script src="js/hcsr_chart.js">  </script>
+    </body>
+
+</html>

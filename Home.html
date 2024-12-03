@@ -4,54 +4,59 @@
 <!--head itu isinya fungsi-fungsi backstage-->
 <head>
     <meta charset="UTF-8">
-    <title>Homepage | Artsy</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <!--supaya link underlines ilang-->
-    <style>
-      a:link {
-          text-decoration: none;
-      }
-      a:hover {
-          text-decoration: none;
-      }
-  </style>
+    <!-- Biar responsif sama perubahan ukuran layar -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>Home</title>
 
     <!--ngelink ke css/desainnya web home-->
-    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="css/Home.css">
 
   </head>
 
   <!--body itu isi yang ditampilin-->
-  <body>
-    <header>
-        <!--top-wrapper isinya tombol bagian atas yang tetap-->
-        <div class="top-wrapper" id="box1">
-          <div class="logo-artsy">
-            <img class="logo" src="https://static.wikia.nocookie.net/ensemble-stars/images/5/56/AKATSUKI_ES_Logo.png/revision/latest?cb=20191027205722">
-          </div>
+    <body>
+        <!-- Navbar -->
+        <header class="header_section">
+            <div class="top-wrapper">
 
-          <div class="btn-wrapper">
-            <!-- Dalem href masukin link yang scroll tea -->
-            <a href="Home.html" class="btn home">HOME</a> 
-            <a href="About-me.html" class="btn about-me">ABOUT ME</a>
-            <a href="Porto.html" class="btn porto">PORTO</a>
-            <a href="Commis.html" class="btn commis">COMMIS</a>
-            <a href="Contact.html" class="btn contact">CONTACT</a>
-          </div>
-          </div>
-      </header>   
-
-      <!--container isinya hlmn dr tombol nanti yg dlm src ganti sm namafilegambar.jpg/png/etc. 
-        gmbr yg tdi taruh folder yg sm kyk kode ini-->
-
-    <div class="container-class">
-
-      <div class="container" id="box2">
-        <img class="keito-chibi" src="https://static.wikia.nocookie.net/ensemble-stars/images/d/d0/Keito_Hasumi_Work_2021_Halloween_Chibi.png/revision/latest?cb=20211222152218">
-        <p>Hai nona manis <br> gitar kupetik <br> bass kubetot</p>
-        <h3><bold>BASS KUBETOT</bold></h3>
-      </div>
+            <div class="id_logo">
+                <img class="logo" src="images/logo-its.png" alt="Logo ITS">
+                <img class="logo" src="images/logo-bme-its.png" alt="Logo BME ITS">
+              </div>
       
+            
+            <ul class="navbar">
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="Distance_Monitor.html">DISTANCE MONITOR</a></li>
+            </ul>
+            
+        </header>
+        <!-- Navbar -->
+
+    <!--VI-->
+    <div class="VI_desc_row">
+        <div class="column_VI">
+            <p>saya nyerah</p>
+            <a href="Distance_Monitor.html" class="distance-monitor">
+                <button type="button">Click Me!</button>
+            </a>
+        </div>
+        <div class="column_VI">
+            <img src="images/logo-its.png" alt="Gambar ITS">
+        </div>
     </div>
-  </body>
-  </html>
+    <!--VI-->
+
+    <!--ESP8266 Pinout-->
+    <div class="ESP_desc_row">
+        <img src="images/esp-pin.jpg" alt="Rangkaian ESP8266">
+        <img src="images/esp-pin-tabel.jpg" alt="Tabel Pin ESP8266">
+    </div>
+
+
+    </body>
+
+</html>
