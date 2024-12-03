@@ -20,10 +20,12 @@ async function fetchDweetData() {
     // Extract distance value
     const dweet = data.with[0]; // The latest dweet
     const distance = dweet.content.distance;
+    const danger = dweet.content.danger;
     const timestamp = new Date(dweet.created).getTime();
 
     // Update the distance display
     document.getElementById('distance').textContent = distance.toFixed(2);
+    document.getElementById('danger').textContent = danger;
 
     // Update the chart
     if (chart.series[0].data.length > 40) {
