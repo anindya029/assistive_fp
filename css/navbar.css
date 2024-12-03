@@ -6,7 +6,7 @@
     left: 0;
     width: 100%; 
     z-index: 1000; /* Pastikan di atas elemen lainnya */
-    background-color: #83ADE9; 
+    background-color: #073978; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan */
   }
   
@@ -22,7 +22,15 @@
   .id_logo {
     display: flex; /* Sejajarkan logo secara horizontal */
     gap: 10px; /* Jarak antar logo */
-  }
+    justify-content: center; /* Tengah secara horizontal */
+}
+
+.id_logo img {
+    background-color: rgba(255, 255, 255, 0.6); /* Warna putih dengan transparansi 80% */
+    padding: 5px; /* Spasi di dalam background */
+    border-radius: 10px; /* Sudut melengkung untuk background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
   
   .logo {
     height: 40px; /* Sesuaikan tinggi logo */

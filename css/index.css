@@ -1,33 +1,74 @@
-/* Container untuk teks dan gambar */
-.VI_desc_row {
-    display: flex; /* Membuat kolom teks dan gambar berdampingan */
-    justify-content: space-between; /* Spasi maksimum antara kolom */
-    align-items: center; /* Vertikal sejajar tengah */
-    gap: 20px; /* Jarak antar kolom */
-    padding: 20px 20px; /* Spasi dalam */
+.section-1 {
+    position: relative;
+    text-align: center;
 }
 
-/* Kolom untuk teks */
-.column_VI {
-    flex: 1; /* Kolom mengambil ruang yang sama */
-    text-align: center; /* Teks rata tengah */
-}
-
-/* Kolom gambar */
-.column_VI img {
+.section-1 img {
     max-width: 100%; /* Gambar tidak melebihi ukuran kontainer */
     height: auto; /* Proporsi gambar tetap */
     display: block; /* Menghindari inline spacing */
     margin: 0 auto; /* Tengah-kan gambar di kolom */
-    padding: 70px;
+    object-fit: cover; /* Mengatur gambar agar pas tanpa distorsi */
 }
+
+.text-overlay {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    z-index: 2;
+}
+
+.text-overlay h2 {
+    font-size: 56px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.click-btn {
+    font-family: 'Poppins', sans-serif;
+    font-style: bold;
+    padding: 5px 20px;
+    font-size: 27px;
+    color: white;
+    background-color: #073978;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.click-btn:hover {
+    background-color: #ecf0f5;
+    transform: scale(1.1);
+}
+
+body {
+    margin: 0; /* Hilangkan margin bawaan browser */
+    padding: 0; /* Hilangkan padding bawaan browser */
+    height: 100vh; /* Tinggi layar penuh (100% dari viewport height) */
+    width: 100vw; /* Lebar layar penuh (100% dari viewport width) */
+    background-color: #ecf0f503;
+    /*background-image: url('your-image.jpg');  Ganti dengan path gambar Anda */
+    /*background-size: cover; /* Agar gambar memenuhi layar tanpa distorsi */
+    /*background-position: center;  Posisi gambar di tengah */
+   /* background-repeat: no-repeat; /* Gambar tidak diulang */
+    /*background-attachment: fixed; /* Agar background tetap saat scroll */
+}
+
 
 /* Responsivitas: Tumpuk kolom di perangkat kecil */
 @media screen and (max-width: 600px) {
-    .VI_desc {
-        flex-direction: column; /* Kolom vertikal saat layar kecil */
+    .text-overlay h2 {
+        font-size: 1.5rem;
     }
-    .column_VI {
-        margin-bottom: 20px; /* Spasi antar kolom */
+
+    .click-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
     }
 }
