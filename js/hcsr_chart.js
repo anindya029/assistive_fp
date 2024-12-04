@@ -1,10 +1,10 @@
-// Dweet.io "thing" name
+// Dweet.io 
 const thingName = "assistive_test";
 
-// Highcharts Initialization
+// Charts Initialization
 const chart = Highcharts.chart('chart-distance', {
     chart: { type: 'line', animation: true },
-    title: { text: 'HC-SR04 Real-Time Distance' },
+    title: { text: '' },
     series: [{ name: 'Distance (cm)', data: [] }],
     xAxis: { 
         type: 'datetime', 
@@ -19,7 +19,7 @@ const chart = Highcharts.chart('chart-distance', {
     credits: { enabled: false },
 });
 
-// Function to fetch data from Dweet.io
+// Fetch data from Dweet.io
 async function fetchDweetData() {
     try {
         const response = await fetch(`https://dweet.io/get/latest/dweet/for/${thingName}`);
