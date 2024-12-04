@@ -4,11 +4,11 @@
 }
 
 .section-1 img {
-    max-width: 100%; /* Gambar tidak melebihi ukuran kontainer */
-    height: auto; /* Proporsi gambar tetap */
+    width: 100%; /* Pastikan gambar memenuhi lebar layar */
+    height: 100%; /* Menyesuaikan tinggi dengan lebar */
+    object-fit: cover; /* Agar gambar memenuhi kontainer dengan tetap mempertahankan proporsi */
     display: block; /* Menghindari inline spacing */
-    margin: 0 auto; /* Tengah-kan gambar di kolom */
-    object-fit: cover; /* Mengatur gambar agar pas tanpa distorsi */
+    margin: 0 auto; /* Tengah-kan gambar di kontainer */*/
 }
 
 .text-overlay {
@@ -63,6 +63,11 @@ body {
 
 /* Responsivitas: Tumpuk kolom di perangkat kecil */
 @media screen and (max-width: 600px) {
+    .section-1 img {
+        height: auto; /*Pastikan gambar tidak terdistorsi */
+        object-position: center; /* Menjaga gambar tetap fokus di tengah */
+    }
+
     .text-overlay h2 {
         font-size: 1.5rem;
     }
