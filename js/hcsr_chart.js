@@ -28,19 +28,35 @@ async function fetchDweetData() {
         // Extract distance value
         const dweet = data.with[0]; // The latest dweet
         const distance = dweet.content.distance ?? 0; // Default to 0 if undefined
+        const max_distance = dweet.content.max_distance ?? 0;
+        const accelerometer = dweet.content.acc ?? 0;
+        const gyro = dweet.content.gyro ?? 0;
         const timestampUTC = new Date(dweet.created).getTime();
         const timestampWIB = timestampUTC + 7 * 60 * 60 * 1000;
 
         // Update the distance display
         document.getElementById('distance').textContent = distance.toFixed(2);
+        //document.getElementById('max_distance').textContent = max_distance.toFixed(2);
+        //document.getElementById('accelerometer').textContent = accelerometer.toFixed(2);
+        //document.getElementById('gyro').textContent = gyro.toFixed(2);
 
         // Define danger message based on distance
-        let danger = "";
-        let max_distance = 10; // Maximum safe distance
+        let dangerObject = "";
+        let dangerFall = "";
+        let fall_acc_threshold = 40000.0;
+        let fall_gyro_threshold = 10000.0;
+        //let max_distance = 10; // Maximum safe distance
+
         if (distance <= max_distance) {
-            danger = "Object detected!";
+            dangerObject = "Object detected!";
         }
-        document.getElementById('danger').textContent = danger;
+
+        if (accelerometer > fall_acc_threshold && gyro > fall_gyro_threshold) {
+            dangerFall = "Fall Detected!";
+          }
+
+        document.getElementById('dangerObject').textContent = dangerObject;
+        document.getElementById('dangerFall').textContent = dangerFall;
 
         // Update the chart
         if (chart.series[0].data.length > 40) {
@@ -56,3 +72,6 @@ async function fetchDweetData() {
 
 // Fetch data periodically
 setInterval(fetchDweetData, 1200); // Fetch every 1.2 seconds
+
+console.log('Fetched data:', data);
+
